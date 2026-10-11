@@ -26,6 +26,8 @@ ex00/
 - English and Arabic content with dynamic document language and text direction.
 - A profile illustration switcher that uses the existing geometric SVG assets.
 - Two skill tracks with continuous horizontal movement, pointer and touch dragging, keyboard controls, and reduced-motion support.
+- A responsive skills grid, project showcase, and interests section.
+- A contact form that prepares an email in the visitor's email application; no server is required.
 - A responsive mobile navigation menu and a relative-path CV download.
 
 The portfolio uses the existing Crimson Red Team color direction and has no frontend framework dependencies.
