@@ -89,7 +89,10 @@ h1 { margin-bottom: 20px; font-size: clamp(52px, 7vw, 82px); line-height: 1.03; 
 .visual-topline { margin-bottom: 13px; }
 .visual-index { font: 10px var(--font-mono); }
 .portrait-frame { position: relative; aspect-ratio: .87; overflow: hidden; border: 1px solid var(--border); background: var(--surface-raised); }
-.profile-image { display: block; width: 100%; height: 100%; object-fit: cover; transition: opacity .2s ease, transform .45s ease; }
+.profile-image, .profile-video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.profile-image[hidden], .profile-video[hidden] { display: none; }
+.profile-video { position: absolute; inset: 0; }
+.profile-image { transition: opacity .2s ease, transform .45s ease; }
 .portrait-frame:hover .profile-image { transform: scale(1.025); }
 .frame-corner { position: absolute; z-index: 1; width: 18px; height: 18px; border-color: var(--accent-bright); }
 .corner-tl { top: 12px; left: 12px; border-top: 1px solid; border-left: 1px solid; }
@@ -146,6 +149,12 @@ h1 { margin-bottom: 20px; font-size: clamp(52px, 7vw, 82px); line-height: 1.03; 
 .marquee-items li:nth-child(3n) { transform: translateY(-5px); }
 .marquee-items li:nth-child(3n + 2) { transform: translateY(6px); }
 .marquee-items img, .tool-mark { width: 31px; height: 31px; flex: 0 0 31px; object-fit: contain; pointer-events: none; -webkit-user-drag: none; }
+.tool-marquee { padding-block: 8px; }
+.tool-logo-list { min-width: calc(100vw + 160px); justify-content: space-around; gap: clamp(14px, 2.5vw, 30px); padding-inline: 24px; }
+.tool-logo-list li { width: auto; min-width: max-content; height: 84px; justify-content: center; padding-inline: 5px; }
+.tool-logo-list li:nth-child(n) { transform: none; }
+.tool-marquee .tool-logo-list li:nth-child(n) img { width: 30px; height: 30px; flex-basis: 30px; object-fit: contain; }
+.tool-name { color: var(--muted); font: 10px var(--font-mono); white-space: nowrap; }
 .marquee-items li:nth-child(2n) img { width: 25px; height: 25px; flex-basis: 25px; }
 .marquee-items li:nth-child(3n) img { width: 36px; height: 36px; flex-basis: 36px; }
 .tool-mark { display: grid; place-items: center; border: 0; color: var(--accent-bright); font: 600 12px var(--font-mono); }
@@ -184,6 +193,8 @@ h1 { margin-bottom: 20px; font-size: clamp(52px, 7vw, 82px); line-height: 1.03; 
 .project-label { margin: 19px 0 8px; color: var(--dim); font: 9px var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
 .journey-content { position: relative; }
 .journey-content::before { position: absolute; top: 7px; bottom: 7px; left: 4px; width: 1px; background: var(--border); content: ""; }
+.journey-subheading { margin: 0 0 18px; margin-inline-start: 30px; color: var(--accent-bright); font-size: 13px; font-weight: 500; }
+.journey-subheading-training { margin-top: 5px; }
 .journey-block { position: relative; display: grid; grid-template-columns: 10px 1fr; gap: 20px; padding-bottom: 30px; }
 .journey-block:last-child { padding-bottom: 0; }
 .journey-marker { z-index: 1; width: 9px; height: 9px; margin-top: 6px; border: 1px solid var(--accent-bright); border-radius: 50%; background: var(--bg); }
